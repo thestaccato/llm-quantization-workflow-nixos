@@ -1,0 +1,18 @@
+[project]
+name = "llm-quant"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+dependencies = [
+  "numpy",
+  "transformers",
+  "accelerate",
+  "safetensors",
+  "tokenizers",
+  "huggingface_hub",
+  "optimum"
+]
+
+[tool.uv]
+dev-dependencies = []
+
