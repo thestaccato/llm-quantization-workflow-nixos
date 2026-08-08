@@ -1,18 +1,43 @@
 [project]
-name = "llm-quant"
+name = "llm-quantization-workflow-nixos"
 version = "0.1.0"
+description = "LLM quantization uv workflow"
 requires-python = ">=3.11"
 
 dependencies = [
   "numpy",
+  "scipy",
   "transformers",
-  "accelerate",
-  "safetensors",
   "tokenizers",
   "huggingface_hub",
-  "optimum"
+  "safetensors",
+  "accelerate",
+  "datasets",
+  "bitsandbytes",
+  "optimum",
+  "peft",
+  "tqdm",
+  "rich",
 ]
 
-[tool.uv]
-dev-dependencies = []
+[project.optional-dependencies]
+# Install with: uv sync --extra dev
+dev = [
+  "pytest",
+  "ruff",
+  "black",
+  "ipykernel",
+  "jupyterlab",
+]
 
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"   
